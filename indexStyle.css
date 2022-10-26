@@ -1,14 +1,14 @@
 body {
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(31, 26, 26) ;
 }
 
 div.menu {
     border: 1px solid white;
-    background-color: black;
+    background-color: rgb(31, 26, 26) ;
     /*ajusto el tamanio del cuadrado8*/
     padding: 0%;
     /*centralizo el cuadrado*/
-    margin: 10px;
+    margin: 20px;
     /*le saco la numeracion o puntos a la lista*/
     list-style: none;
     text-align: center;
@@ -31,31 +31,52 @@ div.menu {
     text-decoration: none;
 }
 
-.slide{
-    /*tuve que usar los dos para centralizar las dos imagenes*/
-    display: flex;
+div.box{
     margin: auto;
-}
-
-.box div{
     width: 1000px;
+    /*use height para que el size de la imagen no sobresaliera del marco del div contenedor*/
+    height: 250px;
     border: 3px solid white;
-    margin: auto;
     margin-block-end: 10px;
+    /*espacio entre cada seccion de margen blanco*/
     border-radius: 20px;
     color: white;
 }
 
 .box img{
+    float: left;
     width: 400px;
     border: 3px solid rgb(255, 95, 2);
     border-radius: 20px;
+    /*espacio de la imagen con el contenedor principal y el del div siguiente*/
     margin: 10px;
 }
 
-.box h1{
+.box div p{
+    text-align: center;
+    color: white;
+    font-size: 18px;
+}
+
+.box div h1{
+    text-align: center;
     color: white;
     /*subrayo el texto*/
-    text-decoration: underline;
-
+    /*text-decoration: underline;*/
 }
+.box div h1 p {
+    float: right;
+}
+.box a{
+    text-decoration: none;
+}
+
+.leftbanner{
+    float: left;
+}
+a:hover h1{
+   color: darkgray;
+}   
+a:hover p{
+    color: darkgray;
+ }   
