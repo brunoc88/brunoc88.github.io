@@ -1,3 +1,63 @@
 body{
    background-color: rgb(0, 55, 145); 
+   
 }
+
+
+div.menu {
+   border: 1px solid white;
+   background-color: rgb(31, 26, 26) ;
+   padding: 0%;
+   margin: 20px;
+   list-style: none;
+   text-align: center;
+}
+
+.menu ul {
+   margin: auto;
+}
+
+.menu li {
+   color: white;
+   font-size: 30px;
+   padding-right: 100px;
+   display: inline;
+}
+
+img{
+   margin: auto;
+   display: block;
+   border: 3px solid white;
+   border-radius: 5px;
+}
+h1{
+   color: white;
+   font-weight: bold;
+   text-align: center;
+   font-size: 100px;
+   -webkit-text-stroke: 1px black;
+}
+p{
+   color: white;
+   font-weight: bold;
+   text-align: center;
+   font-size: 30px;
+   font-weight: bold;
+}
+/* unvisited link */
+a:link {
+   color: white;
+ }
+ 
+ /* visited link */
+ a:visited {
+   color: blue;
+ }
+ /* on link */
+ a:hover{
+   -webkit-text-stroke: 1px rgb(0, 110, 212);
+}
+
+ a{
+   text-decoration: none;
+ }

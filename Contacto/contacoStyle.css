@@ -1,0 +1,45 @@
+body{
+    background-color: black;
+}
+
+.Style{
+    text-align: center;
+    color: white;
+}
+.Style h1{
+    margin-top: 10px;
+}
+.Style p{
+    font-size: larger;
+}
+div.foot{
+    border: 3px solid white;
+    background-color:  rgb(255, 95, 2);
+    border-radius: 10px;
+    height: 400px;
+    width: 200px;
+    padding: 60px;
+    display: block;
+    margin: auto;
+ }
+ .foot label{
+    /*use bold para que resaltara el blanco!*/
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+ }
+ .foot input{
+    border: 1px solid white;
+    border-radius: 3px;
+    background-color: rgb(31, 26, 26);
+    color: white;
+    height: 30px;
+    font-size: large;
+ }
+ textarea{
+    width: 175px;
+    height: 80px;
+    background-color: black;
+    color: white;
+    font-size: large;
+ }

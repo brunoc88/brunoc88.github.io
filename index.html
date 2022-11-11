@@ -7,18 +7,30 @@
 </head>
 
 <body>
+    <div class="banner">
+        <img src="banner/bannerPs.jpg" alt="ps" id="slider">
+    </div>
+    <div class="x">
+        <div>
+            <button onclick="retroceder()"><</button>
+        </div>
+        <div>
+            <button onclick="avanzar()" >></button>
+        </div>
+    </div>
     <div class="menu">
-        <ul class="icon">
+        <ul>
             <!-tuve que cambiar el tamanio del logo de PS para mas simetria–>
             <li><img src="logoPs.png" alt="logoPS" width="20px"> <a href="PS/psPage.html">PlayStation</a></li>
             <li><img src="xboxlogo.png" alt="logoXbox"><a href="Xbox/xbox.html">Xbox</a></li>
             <li><a href="PC/pc.html">PC</a></li>
+            <li><img src="mail-logo-.jpg" alt="mail" width="30px"><a href="Contacto/contacto.html">Contactanos</a></li>
         </ul>
     </div>
-
+    
     <div class="box">
         <div>
-            <img src="1366_2000.jpeg" alt="Gow">
+            <img src="gowragnar.jpeg" alt="Gow">
         </div>
         <div>
             <a href="PS/psPage.html">
@@ -60,7 +72,33 @@
             </p>
             </a>
         </div>
-    </div>
+    </div>  
+    <script>
+            let posicionActual = 0;
+            let imagenes = ["banner/bannerPs.jpg","banner/bannerXbox.jpg","banner/bannerPC.jpg"];
+            let news = ["PlayStation Nuevos Lanzamientos","xbox"];
+            function avanzar(){
+                let pic = document.getElementById("slider");
+                let msj = document.getElementById("news");
+                 if(posicionActual >= imagenes.length-1) {
+                    posicionActual = 0;
+                    } else {
+                        posicionActual++;
+                    }
+                    pic.src = imagenes[posicionActual];
+                    msj.innerHTML = news[posicionActual];
+            }
+            function retroceder(){
+                let pic = document.getElementById("slider");
+                if(posicionActual <= 0) {
+                    posicionActual = imagenes.length-1;
+                } else {
+                    posicionActual--;
+                }
+                pic.src = imagenes[posicionActual];
+            }
+            
+    </script>  
+    
 </body>
-
 </html>

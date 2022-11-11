@@ -8,14 +8,13 @@ div.menu {
     /*ajusto el tamanio del cuadrado8*/
     padding: 0%;
     /*centralizo el cuadrado*/
-    margin: 20px;
+    margin: 10px;
     /*le saco la numeracion o puntos a la lista*/
     list-style: none;
     text-align: center;
 }
 
 .menu ul {
-    /*asi puedo hacer coincidir la letra con el marco*/
     margin: auto;
 }
 
@@ -71,12 +70,58 @@ div.box{
     text-decoration: none;
 }
 
-.leftbanner{
-    float: left;
-}
+ 
 a:hover h1{
    color: darkgray;
 }   
 a:hover p{
     color: darkgray;
- }   
+ }
+ 
+div.foot{
+    border: 3px solid white;
+    background-color:  rgb(255, 95, 2);
+    border-radius: 10px;
+    height: 400px;
+    width: 200px;
+    padding: 10px;
+    margin-left: 40px;
+ }
+ .foot label{
+    /*use bold para que resaltara el blanco!*/
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+ }
+ .foot input{
+    border-radius: 3px;
+    background-color: rgb(31, 26, 26);
+    color: white;
+ }
+.banner{
+    border: 5px solid white;
+    width: 960px;
+    height: 480px;
+    display: block;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.banner h1{
+    color: white;
+}
+button{
+    margin-top: 5px;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+}
+
+.x{ 
+    display: flex;
+    justify-content: center
+}
+
+
+
+ 
