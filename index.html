@@ -76,17 +76,14 @@
     <script>
             let posicionActual = 0;
             let imagenes = ["banner/bannerPs.jpg","banner/bannerXbox.jpg","banner/bannerPC.jpg"];
-            let news = ["PlayStation Nuevos Lanzamientos","xbox"];
             function avanzar(){
                 let pic = document.getElementById("slider");
-                let msj = document.getElementById("news");
                  if(posicionActual >= imagenes.length-1) {
                     posicionActual = 0;
                     } else {
                         posicionActual++;
                     }
                     pic.src = imagenes[posicionActual];
-                    msj.innerHTML = news[posicionActual];
             }
             function retroceder(){
                 let pic = document.getElementById("slider");

@@ -40,9 +40,9 @@ h1{
 p{
    color: white;
    font-weight: bold;
-   text-align: center;
    font-size: 30px;
    font-weight: bold;
+   margin: auto;
 }
 /* unvisited link */
 a:link {
@@ -60,4 +60,12 @@ a:link {
 
  a{
    text-decoration: none;
+ }
+
+ video{
+   display: block;
+   margin: auto;
+   border: 2px solid white;
+   width: 650px;
+   height: 490px;
  }

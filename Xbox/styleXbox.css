@@ -38,7 +38,6 @@ body{
  p{
     color: white;
     font-weight: bold;
-    text-align: center;
     font-size: 30px;
     font-weight: bold;
  }
@@ -58,4 +57,11 @@ body{
  }
   a{
     text-decoration: none;
+  }
+
+  .style {
+   border: 1px solid white;
+   border-radius: 1px;
+   width: 500px;
+   height: 337px;
   }

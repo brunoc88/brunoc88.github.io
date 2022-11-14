@@ -43,3 +43,13 @@ div.foot{
     color: white;
     font-size: large;
  }
+
+ .style2 ul{
+    color: white;
+    font-size: 30px;
+    margin: auto;
+ }
+
+ .error{
+    border: 3px solid red;
+}

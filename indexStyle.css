@@ -70,7 +70,19 @@ div.box{
     text-decoration: none;
 }
 
- 
+ /* unvisited link */
+a:link {
+    color: white;
+  }
+  
+  /* visited link */
+  a:visited {
+    color: rgb(255, 95, 2);
+  }
+  /* on link */
+  a:hover{
+    -webkit-text-stroke: 1px white;
+ }
 a:hover h1{
    color: darkgray;
 }   

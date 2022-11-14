@@ -14,15 +14,15 @@
     </div>
     <div class="Style">
         <div class="foot">
-                <form onsubmit="">
+                <form onsubmit="return validar()" autocomplete="on">
                     <label for="nombre">Nombre:</label><br>
                     <input type="text" id="nombre" name="nombre"><br><br>
                     <label for="apellido">Apellido:</label><br>
                     <input type="text" id="apellido" name="apellido"><br><br>
                     <label for="telefono">Telefono:</label><br>
-                    <input type="text" id="telefono"><br><br>
+                    <input type="tel" id="telefono" required><br><br>
                     <label for="mail">E-Mail:</label><br>
-                    <input type="text" id="mail" name="mail"><br><br>
+                    <input type="email" id="mail" name="mail"><br><br>
                     <label for="comentario">Comentario:</label>
                     <textarea name="comentario" id="comentario" cols="30" rows="10"></textarea>
                     <input type="submit" value="Enviar">
@@ -34,6 +34,65 @@
             <a href="../index.html">Volver..</a>
         </h2>
     </div>
+    <div class="style2">
+        <ul id="errores"></ul>
+        <ul id="correcto"></ul>
+    </div>
     
+    <script>
+        function validar(){
+            let xnombre = document.getElementById("nombre");
+            let xapellido = document.getElementById("apellido");
+            let xerrores = document.getElementById("errores");
+            let xtelefono = document.getElementById("telefono");
+            let xmail =  document.getElementById("mail");
+            let xcomentario = document.getElementById("comentario");
+            let xcorrecto = document.getElementById("correcto");
+            let xflag = true;
+            if(xnombre.value == ""){
+                let alert = document.createElement("li");
+                alert.innerHTML = "Error: campo nombre vacio";
+                errores.appendChild(alert);
+                nombre.classList.add("error");
+                flag = false;
+            }
+            if(xapellido.value == ""){
+                let alert = document.createElement("li");
+                alert.innerHTML = "Error: campo apellido vacio";
+                errores.appendChild(alert);
+                flag = false;
+            }
+            if(xtelefono.value == ""){
+                let alert = document.createElement("li");
+                alert.innerHTML = "Error: campo telefono vacio";
+                errores.appendChild(alert);
+                flag = false;
+            }
+            if(xmail.value == ""){
+                let alert = document.createElement("li");
+                alert.innerHTML = "Error: campo e-mail vacio";
+                errores.appendChild(alert);
+                flag = false;
+            }
+            if(xcomentario.value.trim() == ""){
+                let alert = document.createElement("li");
+                alert.innerHTML = "Error: campo comentario vacio";
+                errores.appendChild(alert);
+                flag = false;
+            }
+            if(xnombre.value != "" && xapellido.value != "" && xtelefono.value != "" && xmail.value != "" && xcomentario.value.trim() != ""){
+                let x = document.createElement("li");
+                x.innerHTML = "Solicitud enviada!";
+                correcto.appendChild(x);
+                nombre.value = "";
+                apellido.value = "";
+                telefono.value = "";
+                mail.value = "";
+                comentario.value.trim()= "";
+                flag = false;
+            }
+            return flag;
+        }
+    </script>
 </body>
 </html>
