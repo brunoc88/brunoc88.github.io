@@ -54,7 +54,7 @@
             let x = document.getElementById("mal");
             let emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
             let numberEx = /^[0-9]+$/;
-            let nameEx =  /^([A-Z]{1}[a-zñáéíóú]+[\s]*)+$/;
+            let nameEx =  /^([a-zñáéíóú]+[\s]*)+$/;
             x.innerHTML = "";
             let msj;
             if (nombre.value.trim() =="") {
@@ -87,7 +87,7 @@
                 sinError = false;
             }else if(!numberEx.test(telefono.value)){
                 msj = document.createElement("li");
-                msj.innerHTML = "Error: Escriba solo numeros!";
+                msj.innerHTML = "Error: ingreso letras, escriba un numero telefonico correcto!";
                 x.appendChild(msj);
                 sinError = false;
             }
@@ -110,9 +110,21 @@
             }
             
             if (sinError) {
-                x = document.createElement("li");
-                x.innerHTML = "Solicitud enviada!";
-                correcto.appendChild(x);
+                let show = document.createElement("h3");
+                show.innerHTML = "Solicitud enviada!";
+                correcto.appendChild(show);
+                let name = document.createElement("li");
+                name.innerHTML = "Nombre: "+nombre.value;
+                correcto.appendChild(name);
+                let sname = document.createElement("li");
+                sname.innerHTML = "Apellido: "+apellido.value;
+                correcto.appendChild(sname);
+                let tel = document.createElement("li");
+                tel.innerHTML = "Telefono: "+telefono.value;
+                correcto.appendChild(tel);
+                let correo = document.createElement("li");
+                correo.innerHTML = "Mail: "+mail.value;
+                correcto.appendChild(correo);
                 nombre.value = "";
                 apellido.value = "";
                 telefono.value = "";
