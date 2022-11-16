@@ -43,13 +43,19 @@ div.foot{
     color: white;
     font-size: large;
  }
-
- .style2 ul{
+.style2 li {
     color: white;
     font-size: 30px;
-    margin: auto;
+    list-style: none;
  }
+ .style2 h3{
+    color: white;
+    font-size: 30px;
+    list-style: none;
+ }
+ div.style2{
+    text-align: center;
+ }
+ 
+ 
 
- .error{
-    border: 3px solid red;
-}

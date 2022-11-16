@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contactanos</title>
     <link rel="stylesheet" href="contacoStyle.css">
 </head>
+
 <body>
     <div class="Style">
         <h1>Muchas gracias por haber visitado nuestro sitio!</h1>
-        <p>Nos gustaria que deje sus datos junto a un comentario para cualquier colaboracion o para mejorar el sitio!</p>
+        <p>Nos gustaria que deje sus datos junto a un comentario para cualquier colaboracion o para mejorar el sitio!
+        </p>
     </div>
     <div class="Style">
         <div class="foot">
-                <form onsubmit="return validar()" autocomplete="on">
-                    <label for="nombre">Nombre:</label><br>
-                    <input type="text" id="nombre" name="nombre"><br><br>
-                    <label for="apellido">Apellido:</label><br>
-                    <input type="text" id="apellido" name="apellido"><br><br>
-                    <label for="telefono">Telefono:</label><br>
-                    <input type="tel" id="telefono" required><br><br>
-                    <label for="mail">E-Mail:</label><br>
-                    <input type="email" id="mail" name="mail"><br><br>
-                    <label for="comentario">Comentario:</label>
-                    <textarea name="comentario" id="comentario" cols="30" rows="10"></textarea>
-                    <input type="submit" value="Enviar">
-                </form>
+            <form id="form" onsubmit="return validar()" autocomplete="on">
+                <label for="nombre">Nombre:</label><br>
+                <input type="text" id="nombre" name="nombre"><br><br>
+                <label for="apellido">Apellido:</label><br>
+                <input type="text" id="apellido" name="apellido"><br><br>
+                <label for="telefono">Telefono:</label><br>
+                <input type="text" id="telefono"><br><br>
+                <label for="mail">E-Mail:</label><br>
+                <input type="text" id="mail" name="mail"><br><br>
+                <label for="comentario">Comentario:</label>
+                <textarea name="comentario" id="comentario" cols="30" rows="10"></textarea>
+                <input type="submit" value="Enviar">
+            </form>
         </div>
     </div>
     <div class="Style">
@@ -35,64 +38,92 @@
         </h2>
     </div>
     <div class="style2">
-        <ul id="errores"></ul>
-        <ul id="correcto"></ul>
+        <div id="correcto"></div>
+        <div id="mal">
+            <ul id="xs"></ul>
+        </div>
     </div>
-    
+
     <script>
-        function validar(){
-            let xnombre = document.getElementById("nombre");
-            let xapellido = document.getElementById("apellido");
-            let xerrores = document.getElementById("errores");
-            let xtelefono = document.getElementById("telefono");
-            let xmail =  document.getElementById("mail");
-            let xcomentario = document.getElementById("comentario");
-            let xcorrecto = document.getElementById("correcto");
-            let xflag = true;
-            if(xnombre.value == ""){
-                let alert = document.createElement("li");
-                alert.innerHTML = "Error: campo nombre vacio";
-                errores.appendChild(alert);
-                nombre.classList.add("error");
-                flag = false;
+        function validar() {
+            let nombre = document.getElementById("nombre");
+            let apellido = document.getElementById("apellido");
+            let telefono = document.getElementById("telefono");
+            let mail = document.getElementById("mail");
+            let comentario = document.getElementById("comentario");
+            let correcto = document.getElementById("correcto");
+            let sinError = true;
+            let x = document.getElementById("mal");
+            let emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+            let numberEx = /^[0-9]+$/;
+            let nameEx = /[a-zA-ZÀ-ÖØ-öø-ÿ]+\.?(( |\-)[a-zA-ZÀ-ÖØ-öø-ÿ]+\.?)*/;
+            x.innerHTML = "";
+            let msj;
+            if (nombre.value.trim() == "") {
+                msj = document.createElement("li");
+                msj.innerHTML = "Error: campo nombre vacio";
+                x.appendChild(msj);
+                sinError = false;
+            }else if(!nameEx.test(nombre.value)){
+                msj = document.createElement("li");
+                msj.innerHTML = "Error: Escriba un nombre sin numeros!";
+                x.appendChild(msj);
+                sinError = false;
             }
-            if(xapellido.value == ""){
-                let alert = document.createElement("li");
-                alert.innerHTML = "Error: campo apellido vacio";
-                errores.appendChild(alert);
-                flag = false;
+            if (apellido.value.trim() == "") {
+                msj = document.createElement("li");
+                msj.innerHTML = "Error: campo apellido vacio";
+                x.appendChild(msj);
+                sinError = false;
+            }else if(!nameEx.test(apellido.value)){
+                msj = document.createElement("li");
+                msj.innerHTML = "Error: Escriba un apellido sin numeros!";
+                x.appendChild(msj);
+                sinError = false;
             }
-            if(xtelefono.value == ""){
-                let alert = document.createElement("li");
-                alert.innerHTML = "Error: campo telefono vacio";
-                errores.appendChild(alert);
-                flag = false;
+            if (telefono.value.trim() == "") {
+                msj = document.createElement("li");
+                msj.innerHTML = "Error: campo telefono vacio";
+                x.appendChild(msj);
+                sinError = false;
+            }else if(!numberEx.test(telefono.value)){
+                msj = document.createElement("li");
+                msj.innerHTML = "Error: Escriba solo numeros!";
+                x.appendChild(msj);
+                sinError = false;
             }
-            if(xmail.value == ""){
-                let alert = document.createElement("li");
-                alert.innerHTML = "Error: campo e-mail vacio";
-                errores.appendChild(alert);
-                flag = false;
+            if (mail.value.trim() == "") {
+                msj = document.createElement("li");
+                msj.innerHTML = "Error: campo e-mail vacio";
+                x.appendChild(msj);
+                sinError = false;
+            }else if (!emailRegex.test(mail.value)) {
+                msj = document.createElement("li");
+                msj.innerHTML = "Error: Escriba un mail correcto!";
+                x.appendChild(msj);
+                sinError = false;
             }
-            if(xcomentario.value.trim() == ""){
-                let alert = document.createElement("li");
-                alert.innerHTML = "Error: campo comentario vacio";
-                errores.appendChild(alert);
-                flag = false;
+            if (comentario.value.trim() == "") {
+                msj = document.createElement("li");
+                msj.innerHTML = "Error: campo comentario vacio";
+                x.appendChild(msj);
+                sinError = false;
             }
-            if(xnombre.value != "" && xapellido.value != "" && xtelefono.value != "" && xmail.value != "" && xcomentario.value.trim() != ""){
-                let x = document.createElement("li");
+            
+            if (sinError) {
+                x = document.createElement("li");
                 x.innerHTML = "Solicitud enviada!";
                 correcto.appendChild(x);
                 nombre.value = "";
                 apellido.value = "";
                 telefono.value = "";
-                mail.value = "";
-                comentario.value.trim()= "";
-                flag = false;
+                mail.value = " ";
+                comentario.value = "";
+                sinError = false;
             }
-            return flag;
+            return sinError;
         }
     </script>
 </body>
+
 </html>
