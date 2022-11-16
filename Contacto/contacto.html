@@ -39,9 +39,7 @@
     </div>
     <div class="style2">
         <div id="correcto"></div>
-        <div id="mal">
-            <ul id="xs"></ul>
-        </div>
+        <div id = "mal"></div>
     </div>
 
     <script>
@@ -56,20 +54,21 @@
             let x = document.getElementById("mal");
             let emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
             let numberEx = /^[0-9]+$/;
-            let nameEx = /[a-zA-ZÀ-ÖØ-öø-ÿ]+\.?(( |\-)[a-zA-ZÀ-ÖØ-öø-ÿ]+\.?)*/;
+            let nameEx =  /^([A-Z]{1}[a-zñáéíóú]+[\s]*)+$/;
             x.innerHTML = "";
             let msj;
-            if (nombre.value.trim() == "") {
+            if (nombre.value.trim() =="") {
                 msj = document.createElement("li");
                 msj.innerHTML = "Error: campo nombre vacio";
                 x.appendChild(msj);
                 sinError = false;
             }else if(!nameEx.test(nombre.value)){
                 msj = document.createElement("li");
-                msj.innerHTML = "Error: Escriba un nombre sin numeros!";
+                msj.innerHTML = "Error: Escriba un nombre correcto!";
                 x.appendChild(msj);
                 sinError = false;
             }
+            
             if (apellido.value.trim() == "") {
                 msj = document.createElement("li");
                 msj.innerHTML = "Error: campo apellido vacio";
@@ -77,7 +76,7 @@
                 sinError = false;
             }else if(!nameEx.test(apellido.value)){
                 msj = document.createElement("li");
-                msj.innerHTML = "Error: Escriba un apellido sin numeros!";
+                msj.innerHTML = "Error: Escriba un apellido correcto!";
                 x.appendChild(msj);
                 sinError = false;
             }
